@@ -10,6 +10,15 @@ const BlogPostTemplate = ({
   location,
 }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
+  const categoryStyles = category => {
+    if (category === "Dev") {
+      return "hotpink"
+    } else if (category === "Design") {
+      return "lightgreen"
+    }
+  }
+
+  console.log(post.frontmatter.category)
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -21,6 +30,16 @@ const BlogPostTemplate = ({
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
+          <p
+            style={{
+              padding: "8px 12px",
+              fontWeight: "bold",
+              color: "white",
+              background: categoryStyles(post.frontmatter.category),
+            }}
+          >
+            {post.frontmatter.category}
+          </p>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -91,6 +110,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        category
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
