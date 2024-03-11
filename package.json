@@ -13,6 +13,7 @@
     "@fontsource-variable/montserrat": "^5.0.17",
     "@fontsource/merriweather": "^5.0.8",
     "@mui/material": "^5.15.12",
+    "axios": "^1.6.7",
     "gatsby": "^5.13.3",
     "gatsby-plugin-emotion": "^8.13.1",
     "gatsby-plugin-feed": "^5.13.1",
