@@ -21,6 +21,8 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-material-ui`,
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
